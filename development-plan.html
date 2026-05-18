@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>发展规划 - p_R ChartTeam</title>
+    <!-- Tailwind CSS + 排版插件（修复prose样式） -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 引入Font Awesome图标 -->
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Tailwind配置 -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0969da',
+                        gray: {
+                            50: '#f6f8fa',
+                            100: '#eaeef2',
+                            200: '#d1d9e0',
+                            300: '#afb8c1',
+                            400: '#8c959f',
+                            500: '#6e7781',
+                            600: '#57606a',
+                            700: '#424a53',
+                            800: '#32383f',
+                            900: '#24292f'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Helvetica', 'Arial', 'sans-serif'],
+                        mono: ['SFMono-Regular', 'Consolas', 'Liberation Mono', 'Menlo', 'monospace']
+                    }
+                }
+            },
+            plugins: [
+                require('@tailwindcss/typography') // 修复prose排版
+            ]
+        }
+    </script>
+    <!-- 自定义工具类 -->
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-shadow-sm {
+                text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+            }
+            .transition-smooth {
+                transition: all 0.2s ease-in-out;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900 font-sans">
+    <!-- 顶部导航栏 -->
+    <header class="border-b border-gray-200 bg-white sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="text-xl font-bold text-gray-900">p_R ChartTeam</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="https://github.com/114514cl/p_R" target="_blank" class="text-gray-600 hover:text-primary transition-smooth">
+                        <i class="fa fa-github text-xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 主内容区（排版+文字全修正） -->
+    <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <section class="mb-16">
+            <h2 class="text-2xl font-bold mb-6 pb-2 border-b border-gray-200">发展规划</h2>
+            <div class="prose max-w-none text-gray-700">
+                <p class="mb-4">p_R ChartTeam 以「相互协作创作 + 谱师接力制作」为长期核心发展方向。</p>
+                
+                <p class="mb-4">团队致力于突破音游谱面制作的单一娱乐属性，将音乐结构拆解为独立片段，供团队谱师联合创作，打造风格多元、内容完整的优质谱面。</p>
+
+                <p class="mb-4">整体项目发展分为三个阶段：</p>
+
+                <h3 class="text-lg font-semibold mt-6 mb-2">1. 基础建设期</h3>
+                <p class="mb-4">制定标准化谱面制作规范，统一视觉风格；搭建协作信息节点，落地谱面接力创作与协同修改机制；打造风格多样、体验完整的全风味谱面作品。</p>
+
+                <h3 class="text-lg font-semibold mt-6 mb-2">2. 叙事迭代期</h3>
+                <p class="mb-4">阶段性开放核心谱面项目（如「万花筒计划」），递进式发布新项目预告；通过收集玩家反馈、定期公开预告、开放半成品试玩等方式，完善创作闭环，为后续谱师创作提供参考。</p>
+
+                <h3 class="text-lg font-semibold mt-6 mb-2">3. 闭环收束期</h3>
+                <p class="mb-4">完成全部核心谱面发布，回收前期半成品内容；修复谱面bug、完善细节闭环，归档整理所有创作资料，完成整套项目的正式收官。</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- 底部 -->
+    <footer class="bg-white border-t border-gray-200 py-8">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <p class="text-gray-500 text-sm">© 2026 p_R ChartTeam. All rights reserved.</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="development-plan.html" class="text-primary hover:text-primary/80 transition-smooth">发展规划</a>
+                    <a href="chart-projects.html" class="text-primary hover:text-primary/80 transition-smooth">谱面项目</a>
+                    <a href="product-analysis.html" class="text-primary hover:text-primary/80 transition-smooth">产品解析</a>
+                    <a href="error-analysis.html" class="text-primary hover:text-primary/80 transition-smooth">错误解析</a>
+                    <a href="contact-us.html" class="text-primary hover:text-primary/80 transition-smooth">联系我们</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

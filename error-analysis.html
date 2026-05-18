@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>错误解析 - p_R ChartTeam</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0969da',
+                        gray: {50:'#f6f8fa',100:'#eaeef2',200:'#d1d9e0',300:'#afb8c1',400:'#8c959f',500:'#6e7781',600:'#57606a',700:'#424a53',800:'#32383f',900:'#24292f'}
+                    },
+                    fontFamily: {sans:['-apple-system','BlinkMacSystemFont','Segoe UI','Helvetica','Arial','sans-serif'],mono:['SFMono-Regular','Consolas','Liberation Mono','Menlo','monospace']}
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {.text-shadow-sm{text-shadow:0 1px 0 rgba(255,255,255,0.5)}.transition-smooth{transition:all 0.2s ease-in-out}}
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900 font-sans">
+    <!-- 顶部导航栏（和主页完全一样） -->
+    <header class="border-b border-gray-200 bg-white sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="text-xl font-bold text-gray-900">p_R ChartTeam</a> <!-- 点标题返回主页 -->
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="https://github.com/114514cl/p_R" target="_blank" class="text-gray-600 hover:text-primary transition-smooth">
+                        <i class="fa fa-github text-xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- 主内容区：合理化改造后的错误解析 -->
+    <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <section class="mb-16">
+            <h2 class="text-2xl font-bold mb-6 pb-2 border-b border-gray-200">错误解析</h2>
+            <div class="prose max-w-none text-gray-700">
+                <p>本板块为 p_R 官方系统错误日志公开释义专区，收录谱面协作平台迭代过程中所有官方级系统故障、模块异常、运行中断代码，提供标准化释义、影响范围说明与官方修复进度。</p>
+                
+                <h3 class="text-xl font-semibold mt-8 mb-4">核心错误释义</h3>
+                
+                <div class="bg-white rounded-lg border border-gray-200 p-6 mb-6">
+                    <h4 class="text-lg font-bold text-gray-900 mb-3">1. pR_UNCORRECTABLE_ERROR</h4>
+                    <p><strong>错误类型：</strong>核心服务致命异常</p>
+                    <p><strong>故障成因：</strong>服务器主进程崩溃、数据库集群节点故障或核心依赖库损坏，导致平台核心功能无法正常运行。</p>
+                    <p><strong>故障表现：</strong>网站无法访问、API接口全部失效、谱面上传/下载/编辑功能中断、用户登录失败。</p>
+                    <p><strong>影响范围：</strong>全平台所有用户</p>
+                    <p><strong>修复状态：</strong>已完成服务器迁移与数据库重建，系统全面自检通过</p>
+                    <p><strong>官方恢复时间：</strong>1718841600）</p>
+                    <p class="text-sm text-gray-500 mt-2">最后更新：2026/05/04</p>
+                </div>
+                
+                <div class="bg-white rounded-lg border border-gray-200 p-6 mb-6">
+                    <h4 class="text-lg font-bold text-gray-900 mb-3">2. pR_MISSING_SOURCE</h4>
+                    <p><strong>错误类型：</strong>谱面源文件缺失或损坏</p>
+                    <p><strong>故障成因：</strong>对象存储服务器磁盘错误、文件上传过程中断、数据库记录与实际文件不一致或恶意文件删除。</p>
+                    <p><strong>故障表现：</strong>部分谱面无法加载、下载失败、在线预览报错或播放时出现音符/背景缺失。</p>
+                    <p><strong>影响范围：</strong>受影响的单个或多个谱面</p>
+                    <p><strong>解决方案：</strong>
+                        <ul class="list-disc pl-6 mt-2">
+                            <li>自动扫描并修复损坏的谱面文件</li>
+                            <li>从备份服务器恢复缺失的源文件</li>
+                            <li>通知谱面作者重新上传损坏的文件</li>
+                        </ul>
+                    </p>
+                    <p><strong>修复状态：</strong>持续监控与自动修复中</p>
+                </div>
+                
+                <div class="bg-white rounded-lg border border-gray-200 p-6 mb-6">
+                    <h4 class="text-lg font-bold text-gray-900 mb-3">3. TERMINUS_DISCONNECTED</h4>
+                    <p><strong>错误类型：</strong>谱面时间轴同步错误</p>
+                    <p><strong>故障成因：</strong>客户端与服务器时间差过大、谱面文件时间戳损坏、音频解码异常或浏览器性能不足。</p>
+                    <p><strong>故障表现：</strong>谱面音符与音乐不同步、判定延迟、游戏过程中突然卡顿或进度条异常。</p>
+                    <p><strong>影响范围：</strong>使用受影响浏览器或设备的用户</p>
+                    <p><strong>解决方案：</strong>
+                        <ul class="list-disc pl-6 mt-2">
+                            <li>优化客户端时间同步机制</li>
+                            <li>增加谱面文件完整性校验</li>
+                            <li>提供手动时间偏移调整功能</li>
+                        </ul>
+                    </p>
+                    <p><strong>修复状态：</strong>已发布修复补丁，正在逐步推送</p>
+                </div>
+                
+                <div class="bg-blue-50 border-l-4 border-primary p-4 mt-8">
+                    <p class="text-gray-700"><strong>说明：</strong>本页面收录的所有错误均为项目运行过程中实际发生的故障，我们会持续更新修复进度。若出现本文档未提及的错误报告，请移步"联系我们"区域进行上传反馈。</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- 底部（和主页完全一样） -->
+    <footer class="bg-white border-t border-gray-200 py-8">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <p class="text-gray-500 text-sm">© 2026 p_R ChartTeam. All rights reserved.</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="development-plan.html" class="text-primary hover:text-primary/80 transition-smooth">发展规划</a>
+                    <a href="chart-projects.html" class="text-primary hover:text-primary/80 transition-smooth">谱面项目</a>
+                    <a href="product-analysis.html" class="text-primary hover:text-primary/80 transition-smooth">产品解析</a>
+                    <a href="error-analysis.html" class="text-primary hover:text-primary/80 transition-smooth">错误解析</a>
+                    <a href="contact-us.html" class="text-primary hover:text-primary/80 transition-smooth">联系我们</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
